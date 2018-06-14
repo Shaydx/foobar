@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FooBar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/picnic">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo">FooBar</div>
+    </header>
+    <main>
+        <div id="barnstats">
+            <div id="pbartenders">
+                <div class="bartendersIn"></div>
+                <div class="bartendersBody">
+                    <div id="bartendersWrap">
+                        <div class="bartender"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="pstats">
+                <div class="ordersBox">
+                    <h4 id="OrdersTitle">Orders:</h4>
+                    <div class="serving"></div>
+                </div>
+                <div class="queueBox">
+                    <div id="queue"></div>
+                </div>
+                <div class="servedBox">
+                    <div id="served"></div>
+                </div>
+                <div class="closeBox">
+                    <h4>Bar Info:</h4>
+                    <div id="closingIn"></div>
+                </div>
+            </div>
+        </div>
+        <div id="pbeers">
+            <div id="StorageWrapper">
+                <div id="storage"></div>
+                <div id="tapsLevel"></div>
+            </div>
+            <div class="beerType"></div>
+        </div>
+
+    </main>
+
+
+    <template id="beerTypes">
+        <div class="beers">
+            <div class="beerPoster">
+                <img src="" class="poster">
+            </div>
+            <div class="beerName">
+                <div class="name">Name</div>
+                <div class="category"></div>
+            </div>
+            <div class="beerInfo">
+                <div class="description"></div>
+            </div>
+        </div>
+    </template>
+
+    <template id="bartenders">
+        <div class="bartender">
+            <div class="bartenderName"></div>
+            <div class="bartenderWorking"></div>
+            <div class="servingCustomer"></div>
+            <div class="statusDetail"></div>
+            <div class="usingTap"></div>
+        </div>
+    </template>
+
+    <template id="servings">
+        <div class="servingOrder"></div>
+    </template>
+
+    <!-- Javascript -->
+    <script src="http://petlatkea.dk/2018/front/foobar.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

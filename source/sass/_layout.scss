@@ -1,0 +1,275 @@
+body {
+    background-color: $primary-color;
+    color: $text-color;
+    font-size: 14px !important;
+}
+
+// Header
+
+header {
+    padding: $padding;
+}
+
+#logo {
+    font-size: 32px;
+    color: $secondary-color;
+}
+
+// Main
+
+#barnstats {
+    background-color: $primary-color;
+    padding: $padding;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.bartendersBody {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "bartender"
+                         "availability";
+    grid-gap: 1em;
+}
+
+#bartendersWrap {
+    display: grid;
+    grid-gap: 1em;
+    @include MQ(L) { 
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.bartender {
+    display: grid;
+    grid-template-columns: 55px 10px auto;
+    grid-template-areas: "name status ."
+                         "serving serving serving"
+                         "detail detail detail"
+                         "tap tap tap";
+    border: 1px solid black;
+    border-left: 10px solid #000;
+    padding: 0.5em;
+}
+
+.bartenderName {
+    grid-area: name;
+    align-items: center;
+}
+
+.servingCustomer {
+    grid-area: serving;
+}
+
+.statusDetail {
+    grid-area: detail;
+}
+
+.usingTap {
+    grid-area: tap;
+}
+
+////////////////////////////////////////////////////////
+// Storage & Taps                                     //
+////////////////////////////////////////////////////////
+
+
+#StorageWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "storage" "tapsLevel";
+    background-color: $secondary-color;
+    padding: $padding;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    @include MQ(L) {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: "storage tapsLevel";        
+    }
+}
+
+#storage {
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: storage;
+    justify-content: center;
+}
+
+.storageContainer {
+    border: 1px solid $secondary-color;
+    width: calc(100% / 2 - 10px);
+    height: 50px;
+    background-color: $primary-color;
+    margin: 5px;
+    position : relative;
+    @include MQ(L) {
+        width: 200px;
+    }
+}
+
+.storageContainer p {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 25px;
+}
+
+// Taps
+
+#tapsLevel {
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: tapsLevel;
+    @include MQ(L) {
+        justify-content: center;
+    }
+}
+
+.tapContainer {
+    border: 1px solid $secondary-color;
+    width: calc(100% / 2 - 10px);
+    height: 200px;
+    background-color: $primary-color;
+    margin: 5px;
+    position : relative;
+    z-index: 1;
+    @include MQ(L) {
+        width: calc(100% / 7 - 10px);
+    }
+}
+
+.beer0, .beer1, .beer2, .beer3, .beer4, .beer5, .beer6 {
+    transition: height 2s;
+    background-color: #F09000;
+    transform: rotate(0deg);
+    color: $secondary-color;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+}
+
+.beerLabel {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 9999;
+    color: #C04800;
+}
+
+// STATS
+
+#pstats {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "orders"
+                         "queue"
+                         "served"
+                         "close";
+    width: 100%;
+    @include MQ(L) {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: "orders orders queue queue served served"
+                             "close close close close close close";
+    }
+}
+
+.ordersBox {
+    grid-area: orders;
+}
+
+.queueBox {
+    grid-area: queue;
+}
+
+#queue, #served {
+    text-align: center;
+    h3 {
+        font-size: 64px;
+    }
+}
+
+
+.servedBox {
+    grid-area: served;
+}
+
+.closeBox {
+    grid-area: close;
+}
+
+
+// BEERS
+
+.beerType {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1em;
+    width: 100%;
+    padding: $padding;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    @include MQ(M) { 
+        grid-template-columns: 1fr 1fr;
+    }
+    @include MQ(L) { 
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.beers {
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 40px auto;
+    grid-template-areas: "poster beerName"
+                         "poster beerInfo"
+                         "poster beerInfo";
+    border: 1px solid $secondary-color;
+    height: auto;
+    @include MQ(L) { 
+        display: grid;
+    }
+}
+
+.beerName {
+    grid-area: beerName;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "name category";
+    padding: $padding;
+}
+
+.name {
+    grid-area: name;
+    justify-self: start;
+    align-self: center;
+    color: $secondary-color;
+}
+
+
+.category {
+    grid-area: category;
+    justify-self: end;
+    align-self: center;
+    color: $secondary-color;
+}
+
+.beerInfo {
+    grid-area: beerInfo;
+    padding: $padding;
+    color: $secondary-color;
+}
+
+.alc {
+    font-weight: 800;
+}
+
+.beerPoster {
+    grid-area: poster;
+}
+
+.poster {
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "exam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "node-sass": "^4.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "sass": "node-sass -w source/sass/style.scss build/css/style.css"
+  },
+  "author": "",
+  "license": "ISC"
+}
